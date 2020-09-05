@@ -1,7 +1,7 @@
 
 def:
-	docker build -t pyramation/postgres:11.3-alpine -f ./11.3/Dockerfile
-	docker build -t pyramation/postgis:11.3-alpine -f ./11.3/Dockerfile.postgis
+	docker build -t pyramation/postgres:11.3-alpine -f ./11.3/Dockerfile ./11.3/
+	docker build -t pyramation/postgis:11.3-alpine -f ./11.3/Dockerfile.postgis ./11.3/git
 
 ssh:
 	docker run -it pyramation/postgres:11.3-alpine /bin/sh
