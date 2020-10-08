@@ -3,8 +3,8 @@ services:
   - docker
 env:
   matrix:
-    - VERSION=11.3
-    - VERSION=12.4
+    - VERSION=11
+    - VERSION=12
 script:
   - docker build -t pyramation/postgres-$(VERSION) ./$(VERSION)
   - docker run -d --name postgres pyramation/postgres-$(VERSION)
