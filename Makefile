@@ -13,14 +13,16 @@ def:
 ssh:
 	docker run -it pyramation/postgres:11.3-alpine /bin/sh
 
-push:
+push11:
 	docker push pyramation/postgres:11.3-alpine
 	docker push pyramation/postgis:11.3-alpine
+
+push12:
 	docker push pyramation/postgres:12.3-alpine
 	docker push pyramation/postgis:12.3-alpine
 
 latest:
 	docker tag pyramation/postgres:12.3-alpine pyramation/postgres:latest
 	docker push pyramation/postgres:latest
-	docker tag pyramation/postgis:122.3-alpine pyramation/postgis:latest
+	docker tag pyramation/postgis:12.3-alpine pyramation/postgis:latest
 	docker push pyramation/postgis:latest
