@@ -12,8 +12,8 @@ env:
     - VERSION=11
     - VERSION=12
 script:
-  - docker build -t pyramation/postgres-$(VERSION) ./$(VERSION)
-  - docker run -d -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres --name postgres pyramation/postgres-$(VERSION)
+  - docker build -t pyramation/postgres-${VERSION} ./${VERSION}
+  - docker run -d -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres --name postgres pyramation/postgres-${VERSION}
   - sleep 3
   - while ! docker exec -it postgres pg_isready -U postgres -h 127.0.0.1; do echo "$(date) - waiting for database to start"; sleep 1; done
   - docker exec -it postgres psql -U postgres -c 'CREATE EXTENSION citext;'
