@@ -11,6 +11,7 @@ env:
   matrix:
     - VERSION=11
     - VERSION=12
+    - VERSION=13
 script:
   - docker build -t pyramation/postgres-${VERSION} ./${VERSION}
   - docker run -d -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres --name postgres pyramation/postgres-${VERSION}
